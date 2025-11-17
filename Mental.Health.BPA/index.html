@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mental Health Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <h1 id="brand" class="brand">Mental Health Awareness</h1>
+
+            <!-- language selector -->
+            <label for="lang" class="skip-link" aria-hidden="true">Language</label>
+            <select id="lang" class="lang-select" aria-label="Select language">
+                <option value="en">English</option>
+                <option value="zh">简体中文</option>
+                <option value="hi">हिंदी</option>
+                <option value="es">Español</option>
+            </select>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a id="navAbout" href="#about">About</a></li>
+                    <li><a id="navResources" href="#resources">Resources</a></li>
+                    <li><a id="navTips" href="#tips">Tips</a></li>
+                    <li><a id="navContact" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container hero-inner">
+                <h2 id="heroHeading">You're not alone.</h2>
+                <p id="lead" class="lead">Mental health matters — for everyone. Find support, learn practical tips, and connect with resources in your area.</p>
+                <p class="hero-actions">
+                    <a id="btnGetHelp" class="btn btn-primary" href="#resources">Get Help</a>
+                    <a id="btnCopingTips" class="btn" href="#tips">Coping Tips</a>
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="container section">
+            <h3 id="aboutHeading">Our Mission</h3>
+            <p id="aboutText">We raise awareness, reduce stigma, and connect people to support. This page provides trusted resources and simple, evidence-informed tips you can use today.</p>
+        </section>
+
+        <section id="resources" class="container section">
+            <h3 id="resourcesHeading">Immediate Resources</h3>
+            <p id="resourcesIntro">If you are in immediate danger or at risk, call your local emergency number first.</p>
+            <ul id="resourcesList" class="resources-list">
+                <li><strong>US:</strong> Call or text <strong>988</strong> — Suicide & Crisis Lifeline</li>
+                <li><strong>UK & ROI:</strong> Samaritans — <strong>116 123</strong></li>
+                <li><strong>Australia:</strong> Lifeline — <strong>13 11 14</strong></li>
+                <li><strong>Other:</strong> Contact local health services or your national crisis line.</li>
+            </ul>
+            <p id="resourcesMore">Find local support organizations, therapists, and peer groups through trusted directories or your healthcare provider.</p>
+        </section>
+
+        <section id="tips" class="container section">
+            <h3 id="tipsHeading">Simple Coping Tips</h3>
+            <ul id="tipsList">
+                <li>Reach out to someone you trust and talk about how you're feeling.</li>
+                <li>Practice grounding: name 5 things you can see, 4 you can touch, 3 you can hear.</li>
+                <li>Try short, regular walks and gentle movement.</li>
+                <li>Limit alcohol and get consistent sleep when possible.</li>
+                <li>If helpful, use breathing exercises (inhale 4 — hold 4 — exhale 6).</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="container section">
+            <h3 id="contactHeading">Contact & Support</h3>
+            <p id="contactIntro">If you'd like to share feedback or resources, use the form below. This form is a simple demo and does not send messages unless connected to a backend.</p>
+            <form class="contact-form" onsubmit="alert('This is a demo form. Hook up a backend to send messages.'); return false;">
+                <label id="labelName" for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+
+                <label id="labelEmail" for="email">Email (optional)</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+                <label id="labelMessage" for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
+
+                <button id="btnSend" class="btn btn-primary" type="submit">Send (demo)</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p id="footerDisclaimer">Not a replacement for professional care. If you're in crisis, contact emergency services or a crisis line immediately.</p>
+            <p>&copy; <span id="year"></span> <span id="brandFooter">Mental Health Awareness</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const translations = {
+            en: {
+                brand: "Mental Health Awareness",
+                navAbout: "About",
+                navResources: "Resources",
+                navTips: "Tips",
+                navContact: "Contact",
+                heroHeading: "You're not alone.",
+                lead: "Mental health matters — for everyone. Find support, learn practical tips, and connect with resources in your area.",
+                btnGetHelp: "Get Help",
+                btnCopingTips: "Coping Tips",
+                aboutHeading: "Our Mission",
+                aboutText: "We raise awareness, reduce stigma, and connect people to support. This page provides trusted resources and simple, evidence-informed tips you can use today.",
+                resourcesHeading: "Immediate Resources",
+                resourcesIntro: "If you are in immediate danger or at risk, call your local emergency number first.",
+                resourcesList: `<li><strong>US:</strong> Call or text <strong>988</strong> — Suicide & Crisis Lifeline</li>
+                    <li><strong>UK & ROI:</strong> Samaritans — <strong>116 123</strong></li>
+                    <li><strong>Australia:</strong> Lifeline — <strong>13 11 14</strong></li>
+                    <li><strong>Other:</strong> Contact local health services or your national crisis line.</li>`,
+                resourcesMore: "Find local support organizations, therapists, and peer groups through trusted directories or your healthcare provider.",
+                tipsHeading: "Simple Coping Tips",
+                tipsList: `<li>Reach out to someone you trust and talk about how you're feeling.</li>
+                    <li>Practice grounding: name 5 things you can see, 4 you can touch, 3 you can hear.</li>
+                    <li>Try short, regular walks and gentle movement.</li>
+                    <li>Limit alcohol and get consistent sleep when possible.</li>
+                    <li>If helpful, use breathing exercises (inhale 4 — hold 4 — exhale 6).</li>`,
+                contactHeading: "Contact & Support",
+                contactIntro: "If you'd like to share feedback or resources, use the form below. This form is a simple demo and does not send messages unless connected to a backend.",
+                labelName: "Name",
+                labelEmail: "Email (optional)",
+                labelMessage: "Message",
+                btnSend: "Send (demo)",
+                footerDisclaimer: "Not a replacement for professional care. If you're in crisis, contact emergency services or a crisis line immediately.",
+                brandFooter: "Mental Health Awareness"
+            },
+            zh: {
+                brand: "心理健康关注",
+                navAbout: "关于",
+                navResources: "资源",
+                navTips: "建议",
+                navContact: "联系",
+                heroHeading: "你并不孤单。",
+                lead: "心理健康很重要 —— 人人皆是。寻找支持，学习实用技巧，并连接您所在地区的资源。",
+                btnGetHelp: "获取帮助",
+                btnCopingTips: "应对技巧",
+                aboutHeading: "我们的使命",
+                aboutText: "我们提高认知、减少污名，并将人们与支持连接。此页面提供可信资源和可立即使用的循证建议。",
+                resourcesHeading: "紧急资源",
+                resourcesIntro: "如果您处于危险或有风险，请首先拨打当地紧急电话。",
+                resourcesList: `<li><strong>美国：</strong>拨打或发送短信 <strong>988</strong> — 自杀与危机热线</li>
+                    <li><strong>英国及爱尔兰：</strong>撒玛利亚人 — <strong>116 123</strong></li>
+                    <li><strong>澳大利亚：</strong>生命线 — <strong>13 11 14</strong></li>
+                    <li><strong>其他：</strong>联系当地卫生服务或国家危机热线。</li>`,
+                resourcesMore: "通过可信的目录或您的医疗服务提供者查找本地支持组织、治疗师和互助小组。",
+                tipsHeading: "简单应对建议",
+                tipsList: `<li>与您信任的人联系，谈谈您的感受。</li>
+                    <li>练习接地：说出您能看到的5样东西、能触摸的4样、能听到的3样。</li>
+                    <li>尝试短时间、规律的散步与轻柔运动。</li>
+                    <li>尽量少饮酒并保持规律睡眠。</li>
+                    <li>如果有帮助，可做呼吸练习（吸气4秒 — 屏气4秒 — 呼气6秒）。</li>`,
+                contactHeading: "联系与支持",
+                contactIntro: "如需反馈或资源共享，请使用下方表单。此表单为示例，未连接后端不会发送消息。",
+                labelName: "姓名",
+                labelEmail: "电子邮件（可选）",
+                labelMessage: "留言",
+                btnSend: "发送（示例）",
+                footerDisclaimer: "不能替代专业治疗。如遇危机，请立即联系急救服务或危机热线。",
+                brandFooter: "心理健康关注"
+            },
+            hi: {
+                brand: "मानसिक स्वास्थ्य जागरूकता",
+                navAbout: "हमारे बारे में",
+                navResources: "संसाधन",
+                navTips: "टिप्स",
+                navContact: "संपर्क",
+                heroHeading: "आप अकेले नहीं हैं।",
+                lead: "मानसिक स्वास्थ्य महत्वपूर्ण है — सभी के लिए। सहायता पाएं, व्यावहारिक सुझाव सीखें, और अपने क्षेत्र के संसाधनों से जुड़ें।",
+                btnGetHelp: "मदद लें",
+                btnCopingTips: "सुझाव",
+                aboutHeading: "हमारा मिशन",
+                aboutText: "हम जागरूकता बढ़ाते हैं, कलंक कम करते हैं और लोगों को समर्थन से जोड़ते हैं। यह पृष्ठ भरोसेमंद संसाधन और सरल, साक्ष्य-आधारित सुझाव प्रदान करता है।",
+                resourcesHeading: "तत्काल संसाधन",
+                resourcesIntro: "यदि आप तत्काल ख़तरे में हैं, तो पहले अपने स्थानीय आपातकालीन नंबर पर कॉल करें।",
+                resourcesList: `<li><strong>यूएस:</strong> कॉल या टेक्स्ट <strong>988</strong> — Suicide & Crisis Lifeline</li>
+                    <li><strong>यूके व ROI:</strong> Samaritans — <strong>116 123</strong></li>
+                    <li><strong>ऑस्ट्रेलिया:</strong> Lifeline — <strong>13 11 14</strong></li>
+                    <li><strong>अन्य:</strong> स्थानीय स्वास्थ्य सेवाओं या राष्ट्रीय crisis लाइन से संपर्क करें।</li>`,
+                resourcesMore: "स्थानीय समर्थन संगठन, चिकित्सकों और पीयर समूहों को भरोसेमंद निर्देशिकाओं या आपके स्वास्थ्य प्रदाता के माध्यम से खोजें।",
+                tipsHeading: "सरल सामना करने के सुझाव",
+                tipsList: `<li>किसी विश्वसनीय व्यक्ति से संपर्क करें और अपनी भावनाओं के बारे में बात करें।</li>
+                    <li>ग्राउंडिंग का अभ्यास करें: 5 चीजें बताएं जो आप देख सकते हैं, 4 जो छू सकते हैं, 3 जो सुन सकते हैं।</li>
+                    <li>संक्षिप्त, नियमित सैर और हल्की गतिविधि आज़माएँ।</li>
+                    <li>शराब सीमित करें और संभव हो तो नियमित नींद लें।</li>
+                    <li>यदि सहायक हो, तो श्वास अभ्यास आज़माएँ (सांस लें 4 — रोकें 4 — छोड़ें 6)।</li>`,
+                contactHeading: "संपर्क और सहायता",
+                contactIntro: "यदि आप प्रतिक्रिया या संसाधन साझा करना चाहते हैं, तो नीचे फ़ॉर्म का उपयोग करें। यह फ़ॉर्म एक डेमो है और संदेश भेजने के लिए बैकएंड से जुड़ा नहीं है।",
+                labelName: "नाम",
+                labelEmail: "ईमेल (वैकल्पिक)",
+                labelMessage: "संदेश",
+                btnSend: "भेजें (डेमो)",
+                footerDisclaimer: "यह पेशेवर देखभाल का विकल्प नहीं है। यदि आप संकट में हैं, तो तुरंत आपातकालीन सेवाओं या संकट लाइन से संपर्क करें।",
+                brandFooter: "मानसिक स्वास्थ्य जागरूकता"
+            },
+            es: {
+                brand: "Conciencia sobre la Salud Mental",
+                navAbout: "Acerca",
+                navResources: "Recursos",
+                navTips: "Consejos",
+                navContact: "Contacto",
+                heroHeading: "No estás solo.",
+                lead: "La salud mental importa para todos. Encuentra apoyo, aprende consejos prácticos y conéctate con recursos en tu área.",
+                btnGetHelp: "Obtener ayuda",
+                btnCopingTips: "Consejos",
+                aboutHeading: "Nuestra misión",
+                aboutText: "Aumentamos la concienciación, reducimos el estigma y conectamos a las personas con apoyo. Esta página ofrece recursos fiables y consejos sencillos basados en evidencia.",
+                resourcesHeading: "Recursos inmediatos",
+                resourcesIntro: "Si estás en peligro inmediato o en riesgo, llama primero a tu número de emergencia local.",
+                resourcesList: `<li><strong>EE. UU.:</strong> Llama o envía un mensaje de texto al <strong>988</strong> — Suicide & Crisis Lifeline</li>
+                    <li><strong>Reino Unido & Irlanda:</strong> Samaritans — <strong>116 123</strong></li>
+                    <li><strong>Australia:</strong> Lifeline — <strong>13 11 14</strong></li>
+                    <li><strong>Otros:</strong> Contacta con los servicios de salud locales o la línea de crisis nacional.</li>`,
+                resourcesMore: "Encuentra organizaciones de apoyo locales, terapeutas y grupos de pares a través de directorios fiables o tu proveedor de salud.",
+                tipsHeading: "Consejos sencillos para afrontar",
+                tipsList: `<li>Contacta con alguien de confianza y habla sobre cómo te sientes.</li>
+                    <li>Prueba grounding: nombra 5 cosas que puedes ver, 4 que puedes tocar, 3 que puedes oír.</li>
+                    <li>Haz paseos cortos y regulares y movimiento suave.</li>
+                    <li>Limita el alcohol y mantén un sueño consistente cuando sea posible.</li>
+                    <li>Si ayuda, usa ejercicios de respiración (inhala 4 — aguanta 4 — exhala 6).</li>`,
+                contactHeading: "Contacto y apoyo",
+                contactIntro: "Si deseas compartir comentarios o recursos, usa el formulario abajo. Este formulario es una demostración y no envía mensajes a menos que esté conectado a un backend.",
+                labelName: "Nombre",
+                labelEmail: "Correo electrónico (opcional)",
+                labelMessage: "Mensaje",
+                btnSend: "Enviar (demostración)",
+                footerDisclaimer: "No sustituye la atención profesional. Si estás en crisis, contacta inmediatamente con los servicios de emergencia o una línea de crisis.",
+                brandFooter: "Conciencia sobre la Salud Mental"
+            }
+        };
+
+        function applyTranslations(lang) {
+            const t = translations[lang] || translations.en;
+            // simple keys
+            const keysText = ['brand','navAbout','navResources','navTips','navContact','heroHeading','lead','btnGetHelp','btnCopingTips','aboutHeading','aboutText','resourcesHeading','resourcesIntro','resourcesMore','tipsHeading','contactHeading','contactIntro','labelName','labelEmail','labelMessage','btnSend','footerDisclaimer','brandFooter'];
+            keysText.forEach(key => {
+                const el = document.getElementById(key);
+                if (el) el.textContent = t[key];
+            });
+            // HTML lists
+            const resList = document.getElementById('resourcesList');
+            if (resList) resList.innerHTML = t.resourcesList;
+            const tipsList = document.getElementById('tipsList');
+            if (tipsList) tipsList.innerHTML = t.tipsList;
+            // update lang attribute for accessibility
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'hi' ? 'hi' : (lang === 'es' ? 'es' : 'en'));
+        }
+
+        // initialize
+        const saved = localStorage.getItem('siteLang') || (navigator.language || 'en').slice(0,2);
+        const initial = ['en','zh','hi','es'].includes(saved) ? saved : 'en';
+        document.getElementById('lang').value = initial;
+        applyTranslations(initial);
+
+        // handle changes
+        document.getElementById('lang').addEventListener('change', (e) => {
+            const v = e.target.value;
+            localStorage.setItem('siteLang', v);
+            applyTranslations(v);
+        });
+    </script>
+</body>
+</html>
