@@ -3,20 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tips — Mental Health Awareness</title>
+  <title>Tips — Wellness Waves</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container section">
-    <h1>Practical Tips</h1>
-    <ul>
-      <li>Talk to someone you trust — connection helps.</li>
-      <li>Use grounding (5-4-3) when anxious.</li>
-      <li>Move your body: short walks and gentle stretching.</li>
-      <li>Keep a simple routine for sleep and meals.</li>
-      <li>Seek professional help if symptoms persist or worsen.</li>
+  <div id="wave" class="wave-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 id="brand" class="brand">Wellness Waves</h1>
+      <select id="lang" class="lang-select" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="zh">简体中文</option>
+        <option value="hi">हिंदी</option>
+        <option value="es">Español</option>
+      </select>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a id="navAbout" href="About.html">About</a></li>
+          <li><a id="navResources" href="index.html#resources">Resources</a></li>
+          <li><a id="navTips" href="Tips.html">Tips</a></li>
+          <li><a id="navContact" href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container section">
+    <h1 id="tipsHeading">Practical Coping Tips</h1>
+
+    <h2 id="immediateHeading">Immediate techniques</h2>
+    <ul id="tipsList">
+      <li><strong>5-4-3-2-1 grounding:</strong> Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste — slow and steady.</li>
+      <li><strong>Box breathing:</strong> Inhale 4s — hold 4s — exhale 4s — hold 4s. Repeat 4 cycles.</li>
+      <li><strong>Slow belly breaths:</strong> Breathe in for 4, out for 6 — focus on the belly rising and falling.</li>
     </ul>
+
+    <h2 id="dailyHeading">Daily habits that help</h2>
+    <ul>
+      <li id="sleepTip"><strong>Sleep routine:</strong> Aim for consistent sleep/wake times and a wind-down ritual (limit screens 30–60 mins before bed).</li>
+      <li id="moveTip"><strong>Move regularly:</strong> Short walks, stretching, or gentle yoga — 10–30 minutes most days improves mood.</li>
+      <li id="eatTip"><strong>Eat regularly:</strong> Small balanced meals and hydration help energy and concentration.</li>
+    </ul>
+
     <p><a href="index.html">Back to home</a></p>
   </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; <span id="year"></span> <span id="brandFooter">Wellness Waves</span></p></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      en: {
+        brand:"Wellness Waves", brandFooter:"Wellness Waves",
+        navAbout:"About", navResources:"Resources", navTips:"Tips", navContact:"Contact",
+        tipsHeading:"Practical Coping Tips",
+        immediateHeading:"Immediate techniques",
+        tipsList:`<li><strong>5-4-3-2-1 grounding:</strong> Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste — slow and steady.</li>
+                  <li><strong>Box breathing:</strong> Inhale 4s — hold 4s — exhale 4s — hold 4s. Repeat 4 cycles.</li>
+                  <li><strong>Slow belly breaths:</strong> Breathe in for 4, out for 6 — focus on the belly rising and falling.</li>`,
+        dailyHeading:"Daily habits that help",
+        sleepTip:"<strong>Sleep routine:</strong> Aim for consistent sleep/wake times and a wind-down ritual (limit screens 30–60 mins before bed).",
+        moveTip:"<strong>Move regularly:</strong> Short walks, stretching, or gentle yoga — 10–30 minutes most days improves mood.",
+        eatTip:"<strong>Eat regularly:</strong> Small balanced meals and hydration help energy and concentration."
+      },
+      zh: {
+        brand:"健康波浪", brandFooter:"健康波浪",
+        navAbout:"关于", navResources:"资源", navTips:"建议", navContact:"联系",
+        tipsHeading:"实用应对建议",
+        immediateHeading:"即时技巧",
+        tipsList:`<li><strong>5-4-3-2-1 接地：</strong>慢慢说出你能看到的5样、能触摸的4样、能听到的3样、能闻到的2样、能尝到的1样。</li>
+                  <li><strong>方形呼吸：</strong>吸气4秒 — 屏气4秒 — 呼气4秒 — 屏气4秒。重复4轮。</li>
+                  <li><strong>慢腹式呼吸：</strong>吸气4秒，呼气6秒，注意腹部起伏。</li>`,
+        dailyHeading:"有助的日常习惯",
+        sleepTip:"<strong>睡眠规律：</strong>保持一致的作息和睡前放松（睡前30–60分钟减少屏幕时间）。",
+        moveTip:"<strong>经常运动：</strong>短时间散步、拉伸或温和瑜伽，每周多次可改善情绪。",
+        eatTip:"<strong>规律进食：</strong>少量均衡的饮食和补水有助于能量和注意力。"
+      },
+      hi: {
+        brand:"वेलनेस वेव्स", brandFooter:"वेलनेस वेव्स",
+        navAbout:"हमारे बारे में", navResources:"संसाधन", navTips:"टिप्स", navContact:"संपर्क",
+        tipsHeading:"व्यावहारिक सामना करने के सुझाव",
+        immediateHeading:"तुरंत उपयोग करने की तकनीकें",
+        tipsList:`<li><strong>5-4-3-2-1 ग्राउंडिंग:</strong> धीमे से 5 चीजें बताएं जो आप देख सकते हैं, 4 जो छू सकते हैं, 3 जो सुन सकते हैं, 2 जो सूंघ सकते हैं, 1 जो चख सकते हैं।</li>
+                  <li><strong>बॉक्स ब्रेथिंग:</strong> 4s अंदर लें — 4s रोकें — 4s बाहर छोड़ें — 4s रोकें। 4 चक्र दोहराएँ।</li>
+                  <li><strong>धीमी पेट की सांस:</strong> 4 के लिए अंदर लें, 6 के लिए बाहर छोड़ें — पेट के उठने-बैठने पर ध्यान दें।</li>`,
+        dailyHeading:"दिनचर्या जो मदद करती है",
+        sleepTip:"<strong>नींद की दिनचर्या:</strong> समान नींद/जागने का समय रखें और सोने से पहले स्क्रीन कम करें।",
+        moveTip:"<strong>नियमित शारीरिक गतिविधि:</strong> छोटी सैर, स्ट्रेचिंग या हल्का योग — अधिकांश दिनों में 10-30 मिनट मूड सुधारता है।",
+        eatTip:"<strong>नियमित भोजन:</strong> छोटे संतुलित भोजन और हाइड्रेशन ऊर्जा और ध्यान में मदद करते हैं।"
+      },
+      es: {
+        brand:"Ondas de Bienestar", brandFooter:"Ondas de Bienestar",
+        navAbout:"Acerca", navResources:"Recursos", navTips:"Consejos", navContact:"Contacto",
+        tipsHeading:"Consejos prácticos",
+        immediateHeading:"Técnicas inmediatas",
+        tipsList:`<li><strong>Grounding 5-4-3-2-1:</strong> Nombra 5 cosas que puedes ver, 4 que puedes tocar, 3 que puedes oír, 2 que puedes oler, 1 que puedes saborear — despacio y con calma.</li>
+                  <li><strong>Respiración en caja:</strong> Inhala 4s — mantén 4s — exhala 4s — mantén 4s. Repite 4 ciclos.</li>
+                  <li><strong>Respiraciones lentas:</strong> Inhala 4, exhala 6 — enfócate en el abdomen.</li>`,
+        dailyHeading:"Hábitos diarios que ayudan",
+        sleepTip:"<strong>Rutina de sueño:</strong> Intenta horarios consistentes y una rutina de relajación antes de dormir (limita pantallas 30–60 min).",
+        moveTip:"<strong>Mueve tu cuerpo:</strong> Caminatas cortas, estiramientos o yoga suave — 10–30 min la mayoría de los días mejora el ánimo.",
+        eatTip:"<strong>Come regularmente:</strong> Comidas pequeñas y equilibradas y hidratación ayudan la energía y la concentración."
+      }
+    };
+
+    function applyTranslations(lang) {
+      const t = translations[lang] || translations.en;
+      const keys = ['brand','navAbout','navResources','navTips','navContact','tipsHeading','immediateHeading','dailyHeading','brandFooter'];
+      keys.forEach(k => { const el = document.getElementById(k); if (el) el.textContent = t[k]; });
+      const tl = document.getElementById('tipsList'); if (tl) tl.innerHTML = t.tipsList;
+      const sleep = document.getElementById('sleepTip'); if (sleep) sleep.innerHTML = t.sleepTip || sleep.innerHTML;
+      const move = document.getElementById('moveTip'); if (move) move.innerHTML = t.moveTip || move.innerHTML;
+      const eat = document.getElementById('eatTip'); if (eat) eat.innerHTML = t.eatTip || eat.innerHTML;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'hi' ? 'hi' : (lang === 'es' ? 'es' : 'en'));
+    }
+
+    const saved = localStorage.getItem('siteLang') || (navigator.language || 'en').slice(0,2);
+    const initial = ['en','zh','hi','es'].includes(saved) ? saved : 'en';
+    document.getElementById('lang').value = initial;
+    applyTranslations(initial);
+    document.getElementById('lang').addEventListener('change', e => {
+      const v = e.target.value;
+      localStorage.setItem('siteLang', v);
+      applyTranslations(v);
+    });
+
+    // wave navigation
+    const wave = document.getElementById('wave');
+    function playWaveThen(action) {
+      wave.classList.remove('done'); wave.classList.add('animate'); void wave.offsetWidth;
+      wave.addEventListener('animationend', function handler(){ wave.classList.remove('animate'); wave.classList.add('done'); wave.removeEventListener('animationend', handler); if (typeof action === 'function') action(); });
+    }
+    document.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href'); if (!href) return;
+      if (href.startsWith('http') && !href.startsWith(location.origin)) return;
+      a.addEventListener('click', e => { if (e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return; e.preventDefault(); playWaveThen(()=> location.href = href); });
+    });
+  </script>
 </body>
 </html>
