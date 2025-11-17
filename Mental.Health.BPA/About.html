@@ -1,16 +1,124 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Mental Health Awareness</title>
+  <title>About — Wellness Waves</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container section">
-    <h1>Contact</h1>
-    <p>This is a demo contact page. To receive messages, connect the form to an email service or backend endpoint.</p>
+  <div id="wave" class="wave-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 id="brand" class="brand">Wellness Waves</h1>
+      <select id="lang" class="lang-select" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="zh">简体中文</option>
+        <option value="hi">हिंदी</option>
+        <option value="es">Español</option>
+      </select>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a id="navAbout" href="About.html">About</a></li>
+          <li><a id="navResources" href="index.html#resources">Resources</a></li>
+          <li><a id="navTips" href="Tips.html">Tips</a></li>
+          <li><a id="navContact" href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container section">
+    <h1 id="aboutHeading">About Wellness Waves</h1>
+    <p id="aboutText">Wellness Waves is dedicated to increasing mental health awareness, reducing stigma, and helping people find practical support. We provide evidence-informed tips, trusted resources, and links to local crisis services so visitors can take immediate steps for safety and wellbeing.</p>
+
+    <h2 id="purposeHeading">What we do</h2>
+    <ul>
+      <li>Curate reliable crisis numbers and organization links.</li>
+      <li>Share simple, actionable coping skills you can use today.</li>
+      <li>Provide multilingual content to reach diverse communities.</li>
+      <li>Offer guidance on when to seek professional care and how to find it.</li>
+    </ul>
+
     <p><a href="index.html">Back to home</a></p>
   </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; <span id="year"></span> <span id="brandFooter">Wellness Waves</span></p></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      en: {
+        brand:"Wellness Waves", brandFooter:"Wellness Waves",
+        navAbout:"About", navResources:"Resources", navTips:"Tips", navContact:"Contact",
+        aboutHeading:"About Wellness Waves",
+        aboutText:"Wellness Waves is dedicated to increasing mental health awareness, reducing stigma, and helping people find practical support. We provide evidence-informed tips, trusted resources, and links to local crisis services so visitors can take immediate steps for safety and wellbeing.",
+        purposeHeading:"What we do",
+        footerDisclaimer:"Not a replacement for professional care. If you're in crisis, contact emergency services or a crisis line immediately."
+      },
+      zh: {
+        brand:"健康波浪", brandFooter:"健康波浪",
+        navAbout:"关于", navResources:"资源", navTips:"建议", navContact:"联系",
+        aboutHeading:"关于健康波浪",
+        aboutText:"健康波浪致力于提高心理健康意识、减少污名并帮助人们找到实用支持。我们提供循证建议、可信资源和本地危机服务链接，帮助访客采取立即的安全和健康步骤。",
+        purposeHeading:"我们做什么",
+        footerDisclaimer:"不能替代专业治疗。如遇危机，请立即联系急救服务或危机热线。"
+      },
+      hi: {
+        brand:"वेलनेस वेव्स", brandFooter:"वेलनेस वेव्स",
+        navAbout:"हमारे बारे में", navResources:"संसाधन", navTips:"टिप्स", navContact:"संपर्क",
+        aboutHeading:"वेलनेस वेव्स के बारे में",
+        aboutText:"वेलनेस वेव्स मानसिक स्वास्थ्य जागरूकता बढ़ाने, कलंक घटाने और लोगों को व्यावहारिक समर्थन खोजने में मदद करने के लिए समर्पित है। हम साक्ष्य-आधारित सुझाव, भरोसेमंद संसाधन और स्थानीय संकट सेवाओं के लिंक प्रदान करते हैं ताकि आगंतुक सुरक्षा और भलाई के तत्काल कदम उठा सकें।",
+        purposeHeading:"हम क्या करते हैं",
+        footerDisclaimer:"यह पेशेवर देखभाल का विकल्प नहीं है। यदि आप संकट में हैं, तो तुरंत आपातकालीन सेवाओं या संकट लाइन से संपर्क करें।"
+      },
+      es: {
+        brand:"Ondas de Bienestar", brandFooter:"Ondas de Bienestar",
+        navAbout:"Acerca", navResources:"Recursos", navTips:"Consejos", navContact:"Contacto",
+        aboutHeading:"Acerca de Ondas de Bienestar",
+        aboutText:"Ondas de Bienestar está dedicada a aumentar la concienciación sobre la salud mental, reducir el estigma y ayudar a las personas a encontrar apoyo práctico. Proporcionamos consejos basados en evidencia, recursos de confianza y enlaces a servicios de crisis locales para que los visitantes puedan tomar medidas inmediatas por su seguridad y bienestar.",
+        purposeHeading:"Qué hacemos",
+        footerDisclaimer:"No sustituye la atención profesional. Si estás en crisis, contacta inmediatamente con los servicios de emergencia o una línea de crisis."
+      }
+    };
+
+    function applyTranslations(lang) {
+      const t = translations[lang] || translations.en;
+      const keys = ['brand','navAbout','navResources','navTips','navContact','aboutHeading','aboutText','purposeHeading','footerDisclaimer','brandFooter'];
+      keys.forEach(k => { const el = document.getElementById(k); if (el) el.textContent = t[k]; });
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'hi' ? 'hi' : (lang === 'es' ? 'es' : 'en'));
+    }
+
+    const saved = localStorage.getItem('siteLang') || (navigator.language || 'en').slice(0,2);
+    const initial = ['en','zh','hi','es'].includes(saved) ? saved : 'en';
+    document.getElementById('lang').value = initial;
+    applyTranslations(initial);
+    document.getElementById('lang').addEventListener('change', e => {
+      const v = e.target.value;
+      localStorage.setItem('siteLang', v);
+      applyTranslations(v);
+    });
+
+    // wave navigation for smooth page transitions
+    const wave = document.getElementById('wave');
+    function playWaveThen(action) {
+      wave.classList.remove('done'); wave.classList.add('animate'); void wave.offsetWidth;
+      wave.addEventListener('animationend', function handler(){ wave.classList.remove('animate'); wave.classList.add('done'); wave.removeEventListener('animationend', handler); if (typeof action === 'function') action(); });
+    }
+    document.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href'); if (!href) return;
+      // skip external
+      if (href.startsWith('http') && !href.startsWith(location.origin)) return;
+      a.addEventListener('click', e => {
+        if (e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return;
+        e.preventDefault();
+        playWaveThen(()=> location.href = href);
+      });
+    });
+  </script>
 </body>
 </html>
