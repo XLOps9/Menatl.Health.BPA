@@ -3,14 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Mental Health Awareness</title>
+  <title>Contact — Wellness Waves</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container section">
-    <h1>About</h1>
-    <p>We are a small project focused on sharing practical mental health information, reducing stigma, and connecting people with support. Content on this site is for informational purposes and not a replacement for professional care.</p>
+  <div id="wave" class="wave-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 id="brand" class="brand">Wellness Waves</h1>
+      <select id="lang" class="lang-select" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="zh">简体中文</option>
+        <option value="hi">हिंदी</option>
+        <option value="es">Español</option>
+      </select>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a id="navAbout" href="About.html">About</a></li>
+          <li><a id="navResources" href="index.html#resources">Resources</a></li>
+          <li><a id="navTips" href="Tips.html">Tips</a></li>
+          <li><a id="navContact" href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container section">
+    <h1 id="contactHeading">Contact & Feedback</h1>
+
+    <form class="contact-form" onsubmit="alert('Demo: form not connected.'); return false;">
+      <label id="labelName" for="name">Name</label>
+      <input id="name" name="name" type="text" placeholder="Your name" />
+
+      <label id="labelEmail" for="email">Email (optional)</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+      <label id="labelSubject" for="subject">Subject</label>
+      <input id="subject" name="subject" type="text" placeholder="Short subject" />
+
+      <label id="labelMessage" for="message">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="How can we help? Please include any links or resources."></textarea>
+
+      <label><input type="checkbox" id="consent" /> I consent to this site storing my message locally for demo purposes.</label>
+
+      <button id="btnSend" class="btn btn-primary" type="submit">Send (demo)</button>
+    </form>
+
+    <h2 id="privacyHeading">Privacy & safety</h2>
+    <p id="privacyText">Do not share passwords or highly sensitive personal medical information. Messages sent via this demo are not delivered to a person unless the form is connected to a backend. For urgent help, use emergency services or your local crisis line.</p>
+
+    <h2 id="includeHeading">What to include in messages</h2>
+    <ul id="includeList">
+      <li>A short description of the issue or suggestion.</li>
+      <li>Any links or contact details (do not include sensitive personal info).</li>
+      <li>Best way to contact you if you want a reply (email optional).</li>
+    </ul>
+
     <p><a href="index.html">Back to home</a></p>
   </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; <span id="year"></span> <span id="brandFooter">Wellness Waves</span></p></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const translations = {
+      en: {
+        brand:"Wellness Waves", brandFooter:"Wellness Waves",
+        navAbout:"About", navResources:"Resources", navTips:"Tips", navContact:"Contact",
+        contactHeading:"Contact & Feedback",
+        labelName:"Name", labelEmail:"Email (optional)", labelSubject:"Subject", labelMessage:"Message", btnSend:"Send (demo)",
+        privacyHeading:"Privacy & safety",
+        privacyText:"Do not share passwords or highly sensitive personal medical information. Messages sent via this demo are not delivered to a person unless the form is connected to a backend. For urgent help, use emergency services or your local crisis line.",
+        includeHeading:"What to include in messages"
+      },
+      zh: {
+        brand:"健康波浪", brandFooter:"健康波浪",
+        navAbout:"关于", navResources:"资源", navTips:"建议", navContact:"联系",
+        contactHeading:"联系与反馈",
+        labelName:"姓名", labelEmail:"电子邮件（可选）", labelSubject:"主题", labelMessage:"留言", btnSend:"发送（示例）",
+        privacyHeading:"隐私与安全",
+        privacyText:"请勿分享密码或高度敏感的个人医疗信息。除非将表单连接到后端，否则示例不会将消息发送给任何人。遇到紧急情况请使用急救服务或本地危机热线。",
+        includeHeading:"在消息中应包含的信息"
+      },
+      hi: {
+        brand:"वेलनेस वेव्स", brandFooter:"वेलनेस वेव्स",
+        navAbout:"हमारे बारे में", navResources:"संसाधन", navTips:"टिप्स", navContact:"संपर्क",
+        contactHeading:"संपर्क और प्रतिक्रिया",
+        labelName:"नाम", labelEmail:"ईमेल (वैकल्पिक)", labelSubject:"विषय", labelMessage:"संदेश", btnSend:"भेजें (डेमो)",
+        privacyHeading:"गोपनीयता और सुरक्षा",
+        privacyText:"कृपया पासवर्ड या अत्यधिक संवेदनशील व्यक्तिगत चिकित्सा जानकारी साझा न करें। यह डेमो संदेश किसी को नहीं भेजता जब तक कि फॉर्म बैकएंड से जुड़ा न हो। तात्कालिक मदद के लिए स्थानीय आपातकालीन सेवाओं या संकट लाइन से संपर्क करें।",
+        includeHeading:"संदेश में क्या शामिल करें"
+      },
+      es: {
+        brand:"Ondas de Bienestar", brandFooter:"Ondas de Bienestar",
+        navAbout:"Acerca", navResources:"Recursos", navTips:"Consejos", navContact:"Contacto",
+        contactHeading:"Contacto y comentarios",
+        labelName:"Nombre", labelEmail:"Correo electrónico (opcional)", labelSubject:"Asunto", labelMessage:"Mensaje", btnSend:"Enviar (demostración)",
+        privacyHeading:"Privacidad y seguridad",
+        privacyText:"No comparta contraseñas ni información médica personal altamente sensible. Los mensajes enviados mediante esta demostración no llegan a una persona a menos que el formulario esté conectado a un backend. Para ayuda urgente, use los servicios de emergencia o la línea de crisis local.",
+        includeHeading:"Qué incluir en los mensajes"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const t = translations[lang] || translations.en;
+      const keys = ['brand','navAbout','navResources','navTips','navContact','contactHeading','labelName','labelEmail','labelSubject','labelMessage','btnSend','privacyHeading','privacyText','includeHeading','brandFooter'];
+      keys.forEach(k => { const el = document.getElementById(k); if (el) el.textContent = t[k]; });
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : (lang === 'hi' ? 'hi' : (lang === 'es' ? 'es' : 'en'));
+    }
+
+    const saved = localStorage.getItem('siteLang') || (navigator.language || 'en').slice(0,2);
+    const initial = ['en','zh','hi','es'].includes(saved) ? saved : 'en';
+    document.getElementById('lang').value = initial;
+    applyTranslations(initial);
+    document.getElementById('lang').addEventListener('change', e => {
+      const v = e.target.value;
+      localStorage.setItem('siteLang', v);
+      applyTranslations(v);
+    });
+
+    // wave navigation
+    const wave = document.getElementById('wave');
+    function playWaveThen(action) {
+      wave.classList.remove('done'); wave.classList.add('animate'); void wave.offsetWidth;
+      wave.addEventListener('animationend', function handler(){ wave.classList.remove('animate'); wave.classList.add('done'); wave.removeEventListener('animationend', handler); if (typeof action === 'function') action(); });
+    }
+    document.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href'); if (!href) return;
+      if (href.startsWith('http') && !href.startsWith(location.origin)) return;
+      a.addEventListener('click', e => { if (e.metaKey||e.ctrlKey||e.shiftKey||e.altKey) return; e.preventDefault(); playWaveThen(()=> location.href = href); });
+    });
+  </script>
 </body>
 </html>
